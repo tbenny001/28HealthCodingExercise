@@ -5,3 +5,12 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+STATES.each do |s|
+    State.create({
+        name: s.first,
+        symbol: s.second,
+        service_availability: s.third,
+        min_required_age: s.last
+    })
+end
