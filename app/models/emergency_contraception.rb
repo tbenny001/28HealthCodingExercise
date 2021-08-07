@@ -1,0 +1,2 @@
+class EmergencyContraception < Product
+end

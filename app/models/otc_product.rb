@@ -1,0 +1,2 @@
+class OtcProduct < Product
+end

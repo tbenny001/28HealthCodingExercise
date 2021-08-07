@@ -1,0 +1,2 @@
+class TestingKit < Product
+end
