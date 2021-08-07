@@ -14,3 +14,21 @@ STATES.each do |s|
         min_required_age: s.last
     })
 end
+
+PRODUCTS.each do |p|
+    category = p[:category].gsub(/\s+/, "")
+    category = "TestingKit" if category == "TestingKits"
+    category = "OtcProduct" if category == "OTCProducts"
+
+    Product.create({
+        name: p[:name],
+        type: category,
+        drug_code: p[:ndc],
+        quantity: p[:qty],
+        price: p[:price],
+        instructions: p[:instructions]
+    })
+end
+
+Patient.create(full_name: "Jane Doe", email: "janedoe@foo.com", birth_date: DateTime.new(2000,1,1), state: State.first)
+Patient.create(full_name: "Jane Smith", email: "janesmith@foo.com", birth_date: DateTime.new(2000,2,2), state: State.last)
