@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_08_163214) do
+ActiveRecord::Schema.define(version: 2021_08_08_164534) do
 
   create_table "patients", force: :cascade do |t|
     t.string "full_name"
@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 2021_08_08_163214) do
     t.integer "product_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "min_required_age"
     t.index ["product_id"], name: "index_state_products_on_product_id"
     t.index ["state_id"], name: "index_state_products_on_state_id"
   end
